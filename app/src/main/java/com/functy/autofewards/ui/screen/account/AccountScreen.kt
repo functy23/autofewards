@@ -47,7 +47,9 @@ import com.functy.autofewards.ui.component.ToastHost
 import com.functy.autofewards.ui.theme.LocalEnableBlur
 import com.functy.autofewards.ui.util.BlurredBar
 import com.functy.autofewards.ui.util.rememberBlurBackdrop
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import top.yukonga.miuix.kmp.basic.ButtonDefaults
 import top.yukonga.miuix.kmp.basic.Card
 import top.yukonga.miuix.kmp.basic.Icon
@@ -160,8 +162,9 @@ fun AccountScreen(
                                             } else {
                                                 toast = "验证中…"
                                                 scope.launch {
-                                                    val svc = TaskScheduler.mihoyoService(repo)
-                                                    val r = svc.importCookie(mhyCookie.trim())
+                                                    val r = withContext(Dispatchers.IO) {
+                                                        TaskScheduler.mihoyoService(repo).importCookie(mhyCookie.trim())
+                                                    }
                                                     hasStoken.value = repo.hasSecret("mhy.stoken")
                                                     hasCookie.value = repo.hasSecret("mhy.cookie")
                                                     toast = r.summary

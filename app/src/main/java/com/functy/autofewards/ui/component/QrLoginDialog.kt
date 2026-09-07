@@ -29,7 +29,9 @@ import com.functy.autofewards.data.repository.SettingsRepositoryImpl
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 import top.yukonga.miuix.kmp.basic.ButtonDefaults
 import top.yukonga.miuix.kmp.basic.InfiniteProgressIndicator
 import top.yukonga.miuix.kmp.basic.Text
@@ -66,9 +68,11 @@ fun QrLoginDialog(
     var statusText by remember { mutableStateOf("正在创建二维码…") }
     var terminal by remember { mutableStateOf(false) }
 
-    // 创建会话
+    // 创建会话（网络请求必须离开主线程：OkHttp 同步调用在 Main 会抛 NetworkOnMainThreadException）
     LaunchedEffect(Unit) {
-        val session = service.createQrLogin()
+        val session = withContext(Dispatchers.IO) {
+            service.createQrLogin()
+        }
         if (session == null) {
             statusText = "创建二维码失败，详情见日志"
             terminal = true
@@ -87,7 +91,9 @@ fun QrLoginDialog(
             delay(2000)
             elapsed += 2000
             if (terminal) break
-            val s = service.pollQrLoginStatus(ticket = session.ticket, deviceId = session.deviceId)
+            val s = withContext(Dispatchers.IO) {
+                service.pollQrLoginStatus(ticket = session.ticket, deviceId = session.deviceId)
+            }
             when {
                 s == "Created" -> {}
                 s == "Scanned" -> statusText = "已扫码，请在手机上确认"
