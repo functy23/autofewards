@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AutoFewards</string>
+
+    <!-- tabs -->
+    <string name="tab_home">总览</string>
+    <string name="tab_account">账号</string>
+    <string name="tab_bing">Bing</string>
+    <string name="tab_settings">设置</string>
+
+    <!-- nav rail -->
+    <string name="nav_rail_expand">展开</string>
+    <string name="nav_rail_collapse">收起</string>
+
+    <!-- home -->
+    <string name="home_working">工作中</string>
+    <string name="home_working_version">版本: %s</string>
+    <string name="home_learn_kernelsu">了解更多</string>
+    <string name="home_learn_kernelsu_url" translatable="false">https://github.com/functy23/autofewards</string>
+    <string name="home_support_title">支持项目</string>
+    <string name="home_support_content">如果这个应用对你有帮助，欢迎到 GitHub 点个 Star。</string>
+    <string name="home_click_to_learn_kernelsu">在 GitHub 查看项目说明与更新</string>
+
+    <!-- settings -->
+    <string name="settings">设置</string>
+    <string name="settings_home">主页设置</string>
+    <string name="settings_general">常规</string>
+    <string name="settings_app">应用</string>
+    <string name="settings_ui">界面</string>
+    <string name="settings_config">配置</string>
+    <string name="settings_about">关于</string>
+
+    <string name="settings_import_export">导入 / 导出配置</string>
+    <string name="settings_import_export_summary">在设备间迁移全部配置与登录态</string>
+    <string name="settings_export_config">导出配置</string>
+    <string name="settings_import_config">导入配置</string>
+
+    <string name="settings_theme">主题</string>
+    <string name="settings_theme_summary">自定义应用主题颜色</string>
+    <string name="settings_page_scale">页面缩放</string>
+    <string name="settings_enable_blur">模糊效果</string>
+    <string name="settings_enable_blur_summary">在支持的设备上启用背景模糊</string>
+    <string name="settings_floating_bottom_bar">悬浮底栏</string>
+    <string name="settings_floating_bottom_bar_summary">使用悬浮样式的底部导航栏</string>
+    <string name="settings_floating_bottom_bar_blur">悬浮底栏模糊</string>
+    <string name="settings_floating_bottom_bar_blur_summary">为悬浮底栏启用实时模糊背景</string>
+    <string name="settings_notification">任务进度通知</string>
+    <string name="settings_notification_summary">运行任务时显示进度通知</string>
+
+    <string name="settings_mhy_group">米游社</string>
+    <string name="settings_mhy_game_sign">游戏签到</string>
+    <string name="settings_mhy_game_sign_summary">签到原神 / 崩铁 / 绝区零等（原石奖励）</string>
+    <string name="settings_mhy_bbs_sign">社区签到</string>
+    <string name="settings_mhy_bbs_sign_summary">米游币任务：签到 / 看帖 / 点赞 / 分享</string>
+    <string name="settings_mhy_read">自动看帖</string>
+    <string name="settings_mhy_read_summary">浏览帖子获取米游币</string>
+    <string name="settings_mhy_like">自动点赞</string>
+    <string name="settings_mhy_like_summary">为帖子点赞获取米游币</string>
+    <string name="settings_mhy_cancel_like">点赞后取消</string>
+    <string name="settings_mhy_cancel_like_summary">点赞计次后自动取消点赞</string>
+    <string name="settings_mhy_share">自动分享</string>
+    <string name="settings_mhy_share_summary">分享帖子获取米游币</string>
+
+    <string name="settings_bing_group">Bing Rewards</string>
+    <string name="settings_bing_fallback">兜底搜索</string>
+    <string name="settings_bing_fallback_summary">脚本不可用时用内置词库直接搜索</string>
+
+    <string name="settings_wb_group">WorkBuddy</string>
+    <string name="settings_wb_token_hint">在「账号」页粘贴 token</string>
+
+    <string name="settings_about_source">项目主页</string>
+    <string name="settings_about_source_summary">functy23/autofewards on GitHub</string>
+    <!-- settings: task master switches -->
+    <string name="settings_wb_enable">WorkBuddy 自动签到</string>
+    <string name="settings_wb_enable_summary">总开关：启用后自动执行 WorkBuddy 每日签到</string>
+    <string name="settings_mhy_enable">米游社自动任务</string>
+    <string name="settings_mhy_enable_summary">总开关：关闭后跳过所有米游社任务</string>
+    <string name="settings_bing_enable">Bing Rewards</string>
+    <string name="settings_bing_enable_summary">总开关：关闭后不执行 Bing 积分搜索</string>
+
+    <!-- theme screen -->
+    <string name="settings_theme_mode_system">跟随系统</string>
+    <string name="settings_theme_mode_light">浅色</string>
+    <string name="settings_theme_mode_dark">深色</string>
+    <string name="settings_monet">动态取色</string>
+    <string name="settings_key_color">主题颜色</string>
+    <string name="settings_key_color_default">默认（跟随壁纸）</string>
+    <string name="settings_color_style">颜色样式</string>
+    <string name="settings_color_spec">取色规格</string>
+    <string name="color_red">红</string>
+    <string name="color_pink">粉</string>
+    <string name="color_purple">紫</string>
+    <string name="color_deep_purple">深紫</string>
+    <string name="color_indigo">靛蓝</string>
+    <string name="color_blue">蓝</string>
+    <string name="color_cyan">青</string>
+    <string name="color_teal">蓝绿</string>
+    <string name="color_green">绿</string>
+    <string name="color_yellow">黄</string>
+    <string name="color_amber">琥珀</string>
+    <string name="color_orange">橙</string>
+    <string name="color_brown">棕</string>
+    <string name="color_blue_grey">蓝灰</string>
+    <string name="color_sakura">樱色</string>
+</resources>
