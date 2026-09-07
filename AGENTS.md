@@ -320,6 +320,7 @@ Scaffold(
 8. **WB 幂等**：HTTP 400+code 10001=已签成功；today_checked_in 不可靠只作快速短路；401/403=过期。
 9. **日志严禁出现 cookie/token 值**（QR 轮询只记 token type/len 形状）。
 10. 敏感键 sec.* 不进 observedKeys、不进日志；导入导出走 ConfigTransfer（Flutter 兼容格式）。
+11. **OkHttp 同步调用必须离开主线程**：HttpBox.get/post 是同步阻塞——TaskScheduler 内部已在 Dispatchers.Default，但 UI 协程（rememberCoroutineScope，Main 调度）直调 service 方法要手动 `withContext(Dispatchers.IO)`，否则 NetworkOnMainThreadException（0.5.0 已踩：扫码轮询/Cookie 导入）。
 
 ---
 
