@@ -1,4 +1,6 @@
-# AutoFewards
+# AutoFewards（已归档）
+
+> **本仓库已停止维护。** 请改用 [functy23/fewards](https://github.com/functy23/fewards)。
 
 Android 自动签到工具：**米游社**（游戏签到 + 米游币任务）、**WorkBuddy**（每日积分）、**Bing Rewards**（积分搜索）。Kotlin + Jetpack Compose + [Miuix](https://github.com/miuix-kotlin-multiplatform/miuix) 实现，UI 骨架取自 KernelSU manager。
 
